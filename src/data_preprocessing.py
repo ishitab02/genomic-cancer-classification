@@ -1,6 +1,6 @@
 import pickle
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 
 gene_df = pd.read_csv('data/data.csv', index_col=0) 
@@ -46,14 +46,19 @@ print(f"Original number of genes: {X_train_scaled_df.shape[1]}")
 print(f"Number of genes after filtering: {X_train_filtered_df.shape[1]}")
 
 
+# Encoding labels
+label_encoder = LabelEncoder()
+y_train_encoded = label_encoder.fit_transform(y_train)
+y_test_encoded = label_encoder.transform(y_test)
+
+# Saving processed data
 with open('processed/X_train_filtered.pkl', 'wb') as f:
     pickle.dump(X_train_filtered_df, f)
-
 with open('processed/X_test_filtered.pkl', 'wb') as f:
     pickle.dump(X_test_filtered_df, f)
-
 with open('processed/y_train.pkl', 'wb') as f:
-    pickle.dump(y_train, f)
-
+    pickle.dump(y_train_encoded, f)
 with open('processed/y_test.pkl', 'wb') as f:
-    pickle.dump(y_test, f)
+    pickle.dump(y_test_encoded, f)
+with open('models/label_encoder.pkl', 'wb') as f:
+    pickle.dump(label_encoder, f)
