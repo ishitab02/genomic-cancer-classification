@@ -1,0 +1,12 @@
+Classification Report for Random Forest:
+              precision    recall  f1-score   support
+
+           0       0.86      1.00      0.92        60
+           1       1.00      0.75      0.86        16
+           2       1.00      1.00      1.00        30
+           3       1.00      0.68      0.81        28
+           4       0.87      0.96      0.91        27
+
+    accuracy                           0.91       161
+   macro avg       0.94      0.88      0.90       161
+weighted avg       0.92      0.91      0.91       161
