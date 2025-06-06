@@ -1,4 +1,4 @@
-# Cancer Type Classification from Gene Expression Data
+# Cancer type classification from gene expression data
 
 This project builds a machine learning pipeline to classify types of cancer based on RNA-Seq gene expression profiles. The dataset is sourced from Kaggle: Gene Expression Cancer RNA-Seq
 

@@ -17,6 +17,6 @@ This folder contains the core datasets used in this project.
 ## Notes
 
 - The dataset is sourced from the Kaggle dataset:  
-  [Gene Expression Cancer RNA-Seq] (https://www.kaggle.com/datasets/debatreyadas/gene-expression-cancer-rna-seq?select=TCGA-PANCAN-HiSeq-801x20531)
+  [Gene Expression Cancer RNA-Seq](https://www.kaggle.com/datasets/debatreyadas/gene-expression-cancer-rna-seq?select=TCGA-PANCAN-HiSeq-801x20531)
 - These files are merged and preprocessed in `src/data_preprocessing.py`.
 - Ensure these files are placed before running the pipeline.
