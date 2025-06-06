@@ -38,9 +38,9 @@ pip install -r requirements.txt
 
 ### 4. Download and Prepare the Dataset
 
-Visit the Kaggle dataset page (https://www.kaggle.com/datasets/debatreyadas/gene-expression-cancer-rna-seq?select=TCGA-PANCAN-HiSeq-801x20531)
-Download data.csv and labels.csv
-Place them inside the data/ folder at the project root.
+- Visit the Kaggle dataset page (https://www.kaggle.com/datasets/debatreyadas/gene-expression-cancer-rna-seq?select=TCGA-PANCAN-HiSeq-801x20531)
+- Download data.csv and labels.csv
+- Place them inside the data/ folder at the project root.
 
 ## Running the Pipeline
 
