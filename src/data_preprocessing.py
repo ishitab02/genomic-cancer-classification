@@ -1,5 +1,6 @@
 import pickle
 import pandas as pd
+import numpy as np
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
 
@@ -25,14 +26,16 @@ X_test_scaled = scaler.transform(X_test)
 X_train_scaled_df = pd.DataFrame(X_train_scaled, columns=X.columns, index=X_train.index)
 X_test_scaled_df = pd.DataFrame(X_test_scaled, columns=X.columns, index=X_test.index)
 
-# Save X_train_scaled_df for use in notebook plotting
+# Saving the scaled dataframes
 with open('processed/X_train_scaled_df.pkl', 'wb') as f:
     pickle.dump(X_train_scaled_df, f)
+with open('processed/X_test_scaled_df.pkl', 'wb') as f:
+    pickle.dump(X_test_scaled_df, f)
 
 # print(X_scaled_df.shape)
 # print(X_scaled_df.head())
 
-# Calculating variance per gene to identify low-variance genes (only on training set)
+# Calculating variance per gene to identify low-variance genes
 variances = X_train_scaled_df.var(axis=0)
 
 # Dropping low-variance genes (variance < 0.01 based on the plot)
@@ -50,6 +53,11 @@ print(f"Number of genes after filtering: {X_train_filtered_df.shape[1]}")
 label_encoder = LabelEncoder()
 y_train_encoded = label_encoder.fit_transform(y_train)
 y_test_encoded = label_encoder.transform(y_test)
+
+print("Original classes:", y.unique())
+print("Encoded classes in y_train:", np.unique(y_train_encoded))
+print("Encoded classes in y_test:", np.unique(y_test_encoded))
+
 
 # Saving processed data
 with open('processed/X_train_filtered.pkl', 'wb') as f:

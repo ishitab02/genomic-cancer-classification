@@ -23,9 +23,7 @@ X_test_pca = pca_final.transform(X_test_filtered)
 # Saving the data
 with open('processed/X_train_pca.pkl', 'wb') as f:
     pickle.dump(X_train_pca, f)
-
 with open('processed/X_test_pca.pkl', 'wb') as f:
     pickle.dump(X_test_pca, f)
-
 with open('processed/pca_vars.pkl', 'wb') as f:
     pickle.dump((cumulative_variance, n_components_95), f)
